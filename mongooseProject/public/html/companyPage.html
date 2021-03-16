@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>company</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="p-5">
+   
+    <ul id="companyList_ul" class="list-group"></ul>
+    <div class="d-flex flex-row-reverse">
+      <button class="mt-3 mr-3 btn" data-toggle="modal" data-target="#addCompanyModal">Add Company</button>
+      </div>
+    
+      <!-- Modal -->
+      <div class="modal fade" id="addCompanyModal" tabindex="-1" role="dialog" aria-labelledby="addCompanyModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addCompanyModalLongTitle">Add Company</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="d-flex flex-column">
+                <div class="p-2"><div>Name</div><input type="text" class="w-100" id="inp-name"></div>
+                <div class="p-2"><div>Register Number</div><input type="text" class="w-100" id="inp-register-number"></div>
+                <div class="p-2"><div>City</div><input type="text" class="w-100" id="inp-city"></div>
+                <div class="p-2"><div>Province</div><input type="text" class="w-100" id="inp-province"></div>
+                <div class="p-2"><div>Register Date</div><input type="text" class="w-100" id="inp-register-date"></div>
+                <div class="p-2"><div>Phone Number</div><input type="text" class="w-100" id="inp-phone-number"></div>
+               
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="btn-add" data-dismiss="modal">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="updateCompanyModal" tabindex="-1" role="dialog" aria-labelledby="updateCompanyLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="updateComapanyLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="d-flex flex-column">
+                <div class="p-2"><div>Name</div><input type="text" class="w-100" id="update-name"></div>
+                <div class="p-2"><div>Register Number</div><input type="text" class="w-100" id="update-register-number"></div>
+                <div class="p-2"><div>City</div><input type="text" class="w-100" id="update-city"></div>
+                <div class="p-2"><div>Province</div><input type="text" class="w-100" id="update-province"></div>
+                <div class="p-2"><div>Register Date</div><input type="text" class="w-100" id="update-register-date"></div>
+                <div class="p-2"><div>Phone Number</div><input type="text" class="w-100" id="update-phone-number"></div>
+               
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="btn-update" data-dismiss="modal">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../javascript/companyPage.js"></script>
+  </body>
+</html>
