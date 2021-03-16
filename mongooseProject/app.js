@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 
 const employeeRouter = require('./routers/employee');
 const companyRouter = require('./routers/company');
+const indexRouter = require('./routers/index');
 
 
 mongoose.connect(
@@ -33,5 +34,7 @@ app.use(bodyParser.json({
 
 app.use('/employee', employeeRouter);
 app.use('/company', companyRouter);
+app.use('/', indexRouter);
+
 
 app.listen(3000);
