@@ -93,6 +93,19 @@ router.get("/", (req, res, next) => {
 
     });
 
+
+    router.post("/betweenDates",(req, res)=>{
+       let minDate, maxDate;
+    
+       minDate = req.body.minDate;
+       maxDate = req.body.maxDate;
+
+        Company.find({ 'registerDate': { $gt: minDate, $lt: maxDate } }, (err, companies) => {
+            if (err) return res.status(500).send("Somthing went wrong in get companies! \n" + err);
+            return res.json(companies);
+        })
+    });
+
 });
 
 module.exports = router;

@@ -11,6 +11,8 @@ $(document).ready(function () {
     var company = url.searchParams.get("company");
     console.log(company);
 
+    const employeeRDUpdate = datepicker('#inp-birthdate');
+
     $.get(`http://localhost:3000/company/empincompany/${company}`, function (data, status) {
 
         let employees = JSON.stringify(data);
