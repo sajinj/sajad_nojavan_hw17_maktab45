@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>company</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="p-5">
+
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">row</th>
+          <th scope="col">first name</th>
+          <th scope="col">last name</th>
+          <th scope="col">national number</th>
+          <th scope="col">gender</th>
+          <th scope="col">manager</th>
+          <th scope="col">birthDate</th>
+          <th scope="col"></th>
+
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div class="d-flex flex-row-reverse">
+      <button id="btn-modal-add-employee" data-toggle="modal" data-target="#addEmployeeModal">
+        Add Employee
+      </button>
+    </div>
+
+    <div
+      class="modal fade"
+      id="addEmployeeModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="addEmployeeModalTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addEmployeeModalLongTitle">
+              Add Employee
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex flex-column">
+              <div class="p-2">
+                <div>First Name</div>
+                <input type="text" class="w-100" id="inp-fname" />
+              </div>
+              <div class="p-2">
+                <div>Last Name</div>
+                <input type="text" class="w-100" id="inp-lname" />
+              </div>
+              <div class="p-2">
+                <div>National Number</div>
+                <input type="text" class="w-100" id="inp-nationalnumber" />
+              </div>
+              <div class="p-2">
+                <div>Gender</div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="radio-gender"
+                      id="inlineRadio1"
+                      value="male"
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Male</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="radio-gender"
+                      id="inlineRadio2"
+                      value="female"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Female</label
+                    >
+                  </div>
+              </div>
+              <div class="p-2">
+                <div>is Manager</div>
+                <input type="text" class="w-100" id="inp-ismanager" />
+              </div>
+              <div class="p-2">
+                <div>birthDate</div>
+                <input type="text" class="w-100" id="inp-birthdate" />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="btn_add_employee"
+              data-dismiss="modal"
+            >
+              Add
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../javascript/employeePage.js"></script>
+  </body>
+</html>

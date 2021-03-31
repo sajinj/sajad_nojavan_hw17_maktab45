@@ -27,6 +27,10 @@ const employeeSchema = new Schema({
     birthDate: {
         type: Date,
         required: true
+    },
+    company:{
+        type: Schema.Types.ObjectId,
+        ref: 'Company'
     }
 });
 

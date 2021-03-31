@@ -2,8 +2,10 @@ const express = require("express");
 const router = express.Router();
 const Company = require('../models/company');
 const path = require('path');
+const Employee = require('../models/employee');
 
-router.post("/addCompany", function(req, res) {
+
+router.post("/addCompany", function (req, res) {
 
     const NEW_COMPANY = new Company({
         name: req.body.name,
@@ -15,7 +17,7 @@ router.post("/addCompany", function(req, res) {
 
     })
 
-    NEW_COMPANY.save(function(err, company) {        
+    NEW_COMPANY.save(function (err, company) {
         if (err) return res.status(500).send("Somthing went wrong in add user \n!" + err);
         return res.json({
             company,
@@ -34,7 +36,7 @@ router.get("/allCompanies", (req, res) => {
 });
 
 router.put("/updateCompany/:companyId", (req, res) => {
-    Company.findByIdAndUpdate(req.params.companyId, req.body, {new: true}, (err, company) => {
+    Company.findByIdAndUpdate(req.params.companyId, req.body, { new: true }, (err, company) => {
         if (err) return res.status(500).send("Somthing went wrong in update company! \n" + err);
         return res.json(company)
     })
@@ -48,26 +50,49 @@ router.delete("/deleteCompany/:companyId", (req, res) => {
     })
 });
 
-router.get("/1year",(req, res)=>{
+router.get("/1year", (req, res) => {
     let currentDate = new Date;
-    currentDate.setFullYear( currentDate.getFullYear() - 1 );
+    currentDate.setFullYear(currentDate.getFullYear() - 1);
 
-    Company.find({'registerDate':{$gt:currentDate}},'name',(err, companies)=>{
+    Company.find({ 'registerDate': { $gt: currentDate } }, 'name', (err, companies) => {
         if (err) return res.status(500).send("Somthing went wrong in get companies! \n" + err);
         return res.json(companies);
-    })  
+    })
 });
 
 router.put("/updateTehran", (req, res) => {
-    
-    Company.updateMany({},{$set:{"city":"tehran", "province":"tehran"}},(err, companies)=>{
+
+    Company.updateMany({}, { $set: { "city": "tehran", "province": "tehran" } }, (err, companies) => {
         if (err) return res.status(500).send("Somthing went wrong in update company! \n" + err);
         return res.json(companies)
     });
 });
 
-router.get("/", (req, res) => {
-   res.sendFile(path.join(__dirname, '../public/html/companyPage.html'));
+
+router.get("/", (req, res, next) => {
+
+    res.sendFile(path.join(__dirname, '../public/html/companyPage.html'), function (err) {
+        if (err) {
+            res.status(err.status).end();
+        }
+    });
+
+    router.get("/employees", (req, res) => {
+        console.log('request arrived!');
+        res.sendFile(path.join(__dirname, '../public/html/employeePage.html'));
+
+    });
+
+    router.get("/empincompany/:companyId", (req, res) => {
+        console.log('request arrived!');
+        
+        Employee.find({ 'company': `${req.params.companyId}` }, (err, employees) => {
+            if (err) return res.status(500).send("Somthing went wrong in get companies! \n" + err);
+            return res.json(employees);
+        })
+
+    });
+
 });
 
 module.exports = router;
